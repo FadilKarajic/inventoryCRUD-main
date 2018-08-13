@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Capstone Project">
+    <meta name="author" content="Fadil Karajic">
+    <title>Inventory </title> 
+    <meta charset="UTF-8">  
+
+    {% load staticfiles %}  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    
+</head>  
+<body>  
+<table class="table table-striped">    
+    <thead class="thead-dark">
+    <tr>  
+        <th>Part Number</th>  
+        <th>Part Description</th>  
+        <th>Line Location</th>  
+        <th>Line Quantity</th>
+        <th>Line Makeup</th>
+        <th>System Quantity</th>
+        <th>Commentsy</th> 
+        <th>Actions</th>  
+    </tr>  
+    </thead>
+    <tbody>  
+        {% for inventory in inventory %}  
+    <tr>  
+        <td>{{ inventory.partNum }}</td>  
+        <td>{{ inventory.partDesc }}</td>  
+        <td>{{ inventory.lineLoc }}</td>  
+        <td>{{ inventory.lineQuantity }}</td>  
+        <td>{{ inventory.lineMakeup }}</td>  
+        <td>{{ inventory.sysQuantity }}</td>  
+        <td>{{ inventory.comments }}</td>  
+
+        <td>  
+            <a href="/edit/{{ inventory.id }}">Edit</a>  
+            <a href="/delete/{{ inventory.id }}">Delete</a>  
+        </td>  
+    </tr>  
+        {% endfor %}  
+    </tbody>  
+</table>  
+
+<center><a href="/invReq" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>  

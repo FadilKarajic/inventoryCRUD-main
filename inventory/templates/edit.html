@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Capstone Project">
+    <meta name="author" content="Fadil Karajic">
+    <title>Inventory </title> 
+    <meta charset="UTF-8">  
+
+    {% load staticfiles %}  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans|Ubuntu">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/update/{{inventory.id}}">  
+        {% csrf_token %}  
+     
+
+   
+    <h3>Update Details</h3>  
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Part Number:</label>
+      <div class="col-sm-10">
+        <input type="text" name="partNum" id="id_partNum" required maxlength="25" value="{{ inventory.partNum }}"/>
+        </div>
+      </div>
+ 
+     
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Part Description:</label>
+      <div class="col-sm-10">
+        <input type="text" name="partDesc" id="id_partDesc" required maxlength="50" value="{{ inventory.partDesc }}" />
+        </div>
+      </div>
+    
+
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Line Location:</label>
+      <div class="col-sm-10">
+        <input type="text" name="lineLoc" id="id_lineLoc" required maxlength="25" value="{{ inventory.lineLoc }}" />  
+        </div>
+      </div>
+    
+     
+      
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">line Qunatity:</label>
+      <div class="col-sm-10">
+        <input type="text" name="lineQuantity" id="id_lineQuantity" required maxlength="5" value="{{ inventory.lineQuantity }}" /> 
+        </div>
+      </div>
+     
+      
+     
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Line Makeup:</label>
+      <div class="col-sm-10">
+        <input type="text" name="lineMakeup" id="id_lineMakeup" required maxlength="5" value="{{ inventory.lineMakeup }}" />
+        </div>
+      </div>
+ 
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">System Quantity:</label>
+      <div class="col-sm-10">
+        <input type="text" name="sysQuantity" id="id_sysQuantity" required maxlength="5" value="{{ inventory.sysQuantity }}" />
+        </div>
+      </div>
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Comments:</label>
+      <div class="col-sm-10">
+        <input type="text" name="comments" id="id_comments" required maxlength="15" value="{{ inventory.comments }}" />
+        </div>
+      </div>
+
+     
+     
+    <button type="submit" class="btn btn-success">Update</button>  
+    
+</form>  
+</body>  
+</html> 
