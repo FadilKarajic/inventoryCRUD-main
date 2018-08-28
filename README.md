@@ -1,2 +1,4 @@
 # inventoryCRUD-main
-Django project - completed project.
+Class project created using Django Framework.
+
+
